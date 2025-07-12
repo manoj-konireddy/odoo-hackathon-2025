@@ -1,0 +1,43 @@
+# Ignore Python bytecode
+__pycache__/
+*.py[cod]
+
+# Ignore virtual environments
+venv/
+env/
+ENV/
+.venv/
+
+# Ignore IDE/editor-specific files
+.vscode/
+.idea/
+
+# Ignore OS-specific files
+.DS_Store
+Thumbs.db
+
+# Ignore env variables
+.env
+
+# Ignore logs
+*.log
+
+# Ignore compiled HTML cache
+*.html~
+
+# Node modules if using npm at any point
+node_modules/
+
+# Ignore database dumps (optional)
+*.sql
+*.sqlite3
+
+# Ignore test reports
+.coverage
+.pytest_cache/
+htmlcov/
+
+# Ignore build artifacts
+dist/
+build/
+*.egg-info/

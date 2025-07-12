@@ -1,0 +1,60 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 2em;
+  background: #f9f9f9;
+}
+
+h1, h2, h3 {
+  color: #333;
+}
+
+input, textarea, button {
+  padding: 10px;
+  margin: 5px 0;
+  width: 100%;
+  max-width: 500px;
+}
+
+
+button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+form {
+  background: #fff;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+body {
+  position: relative; /* Important for absolute positioning */
+  margin: 0;
+  padding: 0;
+}
+
+.back-corner-button {
+  position: fixed; /* Use fixed to ignore parent containers */
+  top: 16px;
+  left: 16px;
+  background-color: #f5f5f5;
+  color: #333;
+  padding: 8px 14px;
+  font-size: 14px;
+  border-radius: 6px;
+  text-decoration: none;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  transition: background-color 0.2s ease;
+}
+
+.back-corner-button:hover {
+  background-color: #e0e0e0;
+}
+
