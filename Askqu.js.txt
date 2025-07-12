@@ -1,0 +1,28 @@
+import React, { useState } from 'react';
+import TipTapEditor from '../components/Editor';
+import axios from '../services/api';
+
+const AskQuestion = () => {
+  const [title, setTitle] = useState('');
+  const [description, setDescription] = useState('');
+
+  const handleSubmit = async () => {
+    await axios.post('/questions/', {
+      title,
+      description,
+      created_by: 1 // TODO: Replace with actual user ID
+    });
+    alert('Question submitted!');
+  };
+
+  return (
+    <div>
+      <h2>Ask a Question</h2>
+      <input value={title} onChange={e => setTitle(e.target.value)} placeholder="Title" />
+      <TipTapEditor content={description} onChange={setDescription} />
+      <button onClick={handleSubmit}>Submit</button>
+    </div>
+  );
+};
+
+export default AskQuestion;

@@ -1,0 +1,36 @@
+import React, { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
+import axios from '../services/api';
+
+const ViewQuestion = () => {
+  const { id } = useParams();
+  const [question, setQuestion] = useState(null);
+  const [answers, setAnswers] = useState([]);
+
+  useEffect(() => {
+    axios.get(`/questions/${id}/`).then(res => setQuestion(res.data));
+    axios.get('/answers/').then(res => {
+      const filtered = res.data.filter(ans => ans.question === parseInt(id));
+      setAnswers(filtered);
+    });
+  }, [id]);
+
+  return (
+    <div>
+      {question && (
+        <>
+          <h2>{question.title}</h2>
+          <div dangerouslySetInnerHTML={{ __html: question.description }} />
+        </>
+      )}
+      <h3>Answers</h3>
+      {answers.map(a => (
+        <div key={a.id}>
+          <div dangerouslySetInnerHTML={{ __html: a.content }} />
+        </div>
+      ))}
+    </div>
+  );
+};
+
+export default ViewQuestion;

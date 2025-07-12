@@ -1,0 +1,6 @@
+import axios from './api';
+
+export const fetchNotifications = async () => {
+  const response = await axios.get('/notifications/');
+  return response.data;
+};

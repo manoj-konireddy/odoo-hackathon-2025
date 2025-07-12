@@ -1,0 +1,35 @@
+stackit-platform/
+├── backend/
+│   ├── manage.py
+│   ├── stackit/
+│   │   ├── settings.py
+│   │   └── urls.py
+│   ├── users/
+│   │   ├── models.py
+│   │   ├── serializers.py
+│   │   └── views.py
+│   ├── questions/
+│   │   ├── models.py
+│   │   ├── serializers.py
+│   │   └── views.py
+│   ├── notifications/
+│   │   ├── models.py
+│   │   ├── serializers.py
+│   │   └── views.py
+├── frontend/
+│   ├── src/
+│   │   ├── index.js
+│   │   ├── App.js
+│   │   ├── pages/
+│   │   │   ├── Home.js
+│   │   │   ├── AskQuestion.js
+│   │   │   ├── ViewQuestion.js
+│   │   │   ├── Login.js
+│   │   │   └── Register.js
+│   │   ├── components/
+│   │   │   ├── Editor.js
+│   │   │   └── NotificationBell.js
+│   │   └── services/
+│   │       ├── api.js
+│   │       ├── auth.js
+│   │       └── notifications.js

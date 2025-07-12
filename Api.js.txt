@@ -1,0 +1,13 @@
+import axios from 'axios';
+
+const instance = axios.create({
+  baseURL: 'https://stackit-api.onrender.com/api/', // replace with your actual backend URL
+});
+
+// Attach access token from localStorage if available
+const accessToken = localStorage.getItem('access_token');
+if (accessToken) {
+  instance.defaults.headers.common['Authorization'] = `Bearer ${accessToken}`;
+}
+
+export default instance;

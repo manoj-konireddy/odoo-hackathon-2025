@@ -1,0 +1,19 @@
+import axios from './api';
+
+export const login = async (username, password) => {
+  const res = await axios.post('/auth/login/', { username, password });
+  const { access, refresh } = res.data;
+  localStorage.setItem('access_token', access);
+  localStorage.setItem('refresh_token', refresh);
+  axios.defaults.headers.common['Authorization'] = `Bearer ${access}`;
+};
+
+export const logout = () => {
+  localStorage.removeItem('access_token');
+  localStorage.removeItem('refresh_token');
+  delete axios.defaults.headers.common['Authorization'];
+};
+
+export const isAuthenticated = () => {
+  return !!localStorage.getItem('access_token');
+};
